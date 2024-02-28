@@ -1,3 +1,6 @@
+@import url("./sign-up/sign-up.css");
+@import url("./sign-in/signin.css");
+
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

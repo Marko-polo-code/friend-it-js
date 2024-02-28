@@ -15,10 +15,16 @@
         <h1>Friend it</h1>
         <p>Start sharing your property with your friends</p>
         <h3>Join today</h3>
-        <button type="button" id="create-account">Create Account</button>
+        <button type="button" id="create-account" href="sign-up/sign-up.html">Create Account</button>
         <button type="button" id="sign-in">Sign in</button>
       </div>
     </div>
 
   </body>
+  <script>
+    const createAccount = document.getElementById('create-account');
+    createAccount.addEventListener("click", function(e) {
+    window.location.href = e.target.getAttribute("href");
+    });
+  </script>
 </html>

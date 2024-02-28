@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feed</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <h1>Feed</h1>
+
+    <div class="container">
+
+    </div>
+
+
+  </body>
+  <script>
+    const fetchData = async () => {
+      const response = await fetch('../data/feed-data.json')
+      const data = await response.json();
+      const container = document.getElementsByClassName("container")[0];
+
+      for (const { location, distance, dates } of data) {
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add('card');
+
+        const locationDiv = document.createElement("div");
+        locationDiv.append(location);
+        cardDiv.append(locationDiv);
+        const distanceDiv = document.createElement("div");
+        distanceDiv.append(distance);
+        cardDiv.append(distanceDiv);
+        const datesDiv = document.createElement("div");
+        datesDiv.append(dates)
+        cardDiv.append(datesDiv);
+
+        container.append(cardDiv);
+      }
+    }
+
+    fetchData();
+  </script>
+</html>
